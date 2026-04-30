@@ -1,0 +1,9 @@
+<template>
+    <div>
+        erro
+    </div>
+
+</template>
+<script setup lang="ts">
+
+</script>
