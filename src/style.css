@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 body {
-    background-color: #222831;
-    color: white;
+  background-color: #2f3542;
+  color: white;
+}
 
+.p-divider.p-component::before {
+  border-top: 1px solid rgba(253, 253, 253, 0.1);
+  
 }

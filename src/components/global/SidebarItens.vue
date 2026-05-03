@@ -1,13 +1,17 @@
 <template>
   <router-link :to="to" class="">
-    <div class="flex gap-2">
-      <component
-        class="md:w-6"
-        :is="icon"
-        :class="isActive ? 'text-[#1556F5]' : 'text-white'"
-      />
+    <div
+      class="flex gap-2 px-6 py-1.5 rounded-xl items-center"
+      :class="
+        isActive
+          ? 'bg-[#545a67] text-white font-semibold transition-all duration-400  shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]'
+          : ' text-gray-400  font-semibold  transition-all duration-400  hover:shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]'
+      "
+      v-tooltip="label"
+    >
+      <component class="" :is="icon" />
 
-      <span class="md:w-6" :class="isActive ? 'text-[#1556F5]' : 'text-white'">
+      <span>
         {{ label }}
       </span>
     </div>
