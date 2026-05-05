@@ -12,6 +12,7 @@ const routes: RouteRecordRaw[] = [
                 path: 'dashboard',
                 name: 'dashboard',
                 component: () => import('../pages/estoque/DashboardEstoque.vue'),
+                meta: { title: 'Dashboard' }
             },
             {
                 path: 'estoque',
@@ -27,6 +28,7 @@ const routes: RouteRecordRaw[] = [
                         path: 'cadastro',
                         name: 'cadastro',
                         component: () => import('../pages/estoque/CadastroEstoque.vue'),
+                        meta: { title: 'Estoque' },
                     },
                     {
                         path: 'sla',

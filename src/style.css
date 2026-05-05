@@ -3,9 +3,10 @@
 body {
   background-color: #2f3542;
   color: white;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .p-divider.p-component::before {
   border-top: 1px solid rgba(253, 253, 253, 0.1);
-  
+
 }
