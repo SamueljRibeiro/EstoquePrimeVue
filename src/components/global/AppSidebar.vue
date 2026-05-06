@@ -1,16 +1,17 @@
 <template>
   <div
-    class="card h-screen hidden lg:block bg-[#393E46] w-48 rounded-r-xl shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]"
+    class="card h-screen hidden lg:block bg-gradient-to-b from-[#072e63] to-[#0050C16] w-56 rounded-r-lg shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]"
   >
-    <div class="flex justify-between flex-col h-screen items-center">
-      <div class="flex flex-col gap-20">
-        <div class="flex justify-center items-center text-center">
-          <div class="flex items-center justify-center flex-col mt-10">
-            <Image :src="estoque" alt="image" />
-            <h1 class="font-bold text-xl">StockFlow</h1>
+    <div class="flex justify-between flex-col h-screen">
+      <div class="flex flex-col gap-5">
+        <div class="flex justify-center">
+          <div
+            class="flex items-center justify-center flex-col mt-10 mb-5"
+          >
+            <h1 class="font-bold text-xl">Financial Control</h1>
           </div>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-3 ml-5">
           <div v-for="modulo in modulos" :key="modulo.to" class="">
             <SidebarItens
               :to="modulo.to"
@@ -20,7 +21,7 @@
           </div>
         </div>
       </div>
-
+      <!--
       <div class="p-4 w-full flex flex-col items-center gap-2">
         <Divider />
 
@@ -28,7 +29,7 @@
           <i class="pi pi-sign-out" style="font-size: 1rem"></i>
           <span class="text-sm font-semibold">Sair</span>
         </div>
-      </div>
+      </div>-->
     </div>
   </div>
 </template>
