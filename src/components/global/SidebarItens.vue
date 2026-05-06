@@ -1,11 +1,11 @@
 <template>
   <router-link :to="to" class="">
     <div
-      class="flex gap-1  px-6 py-2.5 rounded-l-full  items-center"
+      class="flex gap-1  px-6 py-2.5 rounded-l-full  items-center text-md "
       :class="
         isActive
           ? 'bg-gradient-to-r from-[#0E76F6] to-[#073370] text-white font-semibold transition-all duration-500  shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]'
-          : ' text-gray-400  font-semibold  transition-all duration-500 hover:shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]'
+          : ' text-gray-300  font-semibold  transition-all duration-500 hover:shadow-[0_0_10px_1px_rgba(0,0,0,0.25)]'
       "
       v-tooltip="label"
     >

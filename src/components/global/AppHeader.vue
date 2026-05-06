@@ -2,12 +2,6 @@
   <div class="mt-5 flex justify-center">
     <Menubar class="h-20 p-menubar">
       <template #start>
-        <div class="text-2xl font-semibold pl-5 flex items-center]">
-          {{ router.meta.title || "Nome Padrão App" }}
-        </div>
-      </template>
-      <!-- <div class="text-4xl font-semibold pl-5 flex items-center]">{{ router.meta.title || 'Nome Padrão App' }}</div>-->
-      <template #end>
         <div class="flex mr-5">
           <div class="flex items-center">
             <div class="px-5">
@@ -16,28 +10,21 @@
           </div>
 
           <div class="flex flex-col itms-center justify-center">
-            <h3 class="font-semibold">Samuel Ribeiro</h3>
-            <p class="text-xs text-gray-300">top@gmail.com</p>
+            <h3 class="font-semibold">Bem-vido Samuel Ribeiro!</h3>
+            <p class="text-xs opacity-65">Top@gmail</p>
           </div>
-          <Button
-            type="button"
-            :icon="isToggle ? 'pi pi-angle-up' : 'pi pi-angle-down'"
-            @click="toggle"
-            aria-haspopup="true"
-            aria-controls="overlay_menu"
-            style="color: white; background-color: transparent; border: none"
-            size="large"
-            class="t"
-          />
-
-          <Menu
-            ref="menu"
-            :model="items"
-            :popup="true"
-            @show="isToggle = true"
-            @hide="isToggle = false"
-          />
+          
         </div>
+      </template>
+      <!-- <div class="text-4xl font-semibold pl-5 flex items-center]">{{ router.meta.title || 'Nome Padrão App' }}</div>-->
+      <template #end>
+
+        <Button type="button" :icon="isToggle ? 'pi pi-angle-up' : 'pi pi-angle-down'" @click="toggle"
+          aria-haspopup="true" aria-controls="overlay_menu"
+          style="color: white; background-color: transparent; border: none" size="large" class="t" />
+
+        <Menu ref="menu" :model="items" :popup="true" @show="isToggle = true" @hide="isToggle = false" />
+
       </template>
     </Menubar>
   </div>
@@ -87,7 +74,7 @@ const items = [
 
 <style scoped>
 .p-menubar {
-  background-color: transparent;
+  background-color: #112338;
   border: none;
   width: 97%;
   border-radius: 1rem;
