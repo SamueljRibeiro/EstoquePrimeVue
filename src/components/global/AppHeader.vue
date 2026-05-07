@@ -11,22 +11,35 @@
 
           <div class="flex flex-col itms-center justify-center">
             <h3 class="font-semibold">Bem-vido Samuel Ribeiro!</h3>
-            <p class="text-xs opacity-65">Top@gmail</p>
+            <p class="text-xs opacity-65">{{ date }}</p>
           </div>
-          
         </div>
       </template>
       <!-- <div class="text-4xl font-semibold pl-5 flex items-center]">{{ router.meta.title || 'Nome Padrão App' }}</div>-->
       <template #end>
+        <div class="flex gap-4">
+          <OverlayBadge
+            value="4"
+            severity="danger"
+            class="inline-flex transition-all duration-150 active:scale-90"
+          >
+            <Avatar icon="pi pi-bell" shape="circle" />
+          </OverlayBadge>
 
-        <Button type="button" :icon="isToggle ? 'pi pi-angle-up' : 'pi pi-angle-down'" @click="toggle"
-          aria-haspopup="true" aria-controls="overlay_menu"
-          style="color: white; background-color: transparent; border: none" size="large" class="t" />
-
-        <Menu ref="menu" :model="items" :popup="true" @show="isToggle = true" @hide="isToggle = false" />
-
+          <Avatar
+            icon="pi pi-user-edit"
+            shape="circle"
+            @click="toggle"
+            class="inline-flex transition-all duration-150 active:scale-90"
+          />
+        </div>
+        <Menu ref="menu" :model="items" :popup="true" />
       </template>
     </Menubar>
+  </div>
+
+  <div class="px-9">
+    <Divider />
   </div>
 
   <!-- Menu Mobile-->
@@ -38,16 +51,12 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 import { ref } from "vue";
 
-const router = useRoute();
 const menu = ref();
-const isToggle = ref(false);
 
 const toggle = (event: object) => {
   menu.value.toggle(event);
-  isToggle.value = !isToggle.value;
 };
 
 const items = [
@@ -59,10 +68,6 @@ const items = [
     },
   },
   {
-    label: "Configurações",
-    icon: "pi pi-cog",
-  },
-  {
     separator: true,
   },
   {
@@ -70,11 +75,17 @@ const items = [
     icon: "pi pi-sign-out",
   },
 ];
+
+const date = new Date().toLocaleDateString("pt-br", {
+  weekday: "long",
+  day: "2-digit",
+  month: "long",
+});
 </script>
 
 <style scoped>
 .p-menubar {
-  background-color: #112338;
+  background-color: transparent;
   border: none;
   width: 97%;
   border-radius: 1rem;

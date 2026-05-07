@@ -1,3 +1,5 @@
+import type { st } from "vue-router/dist/index-BzEKChPW.js";
+
 export interface Produto {
   id: string;
   name: string;
@@ -15,4 +17,9 @@ export interface Modulos {
   to: string;
   icon: object;
   label: string;
+}
+
+export interface Redes {
+  icon: string;
+  href: string;
 }
